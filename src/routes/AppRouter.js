@@ -8,6 +8,7 @@ import FooterComponent from '../components/FooterComponent';
 /* PAGES */
 import DashboardPage from '../pages/Dashboard';
 import CreateTodoPage from '../pages/CreateTodo';
+import EditTodoPage from '../pages/EditTodo';
 import NotFoundPage from '../pages/NotFound';
 
 
@@ -18,6 +19,7 @@ const AppRouter = () => (
             <Switch>
                 <Route path="/" exact={true} component={DashboardPage} />
                 <Route path="/create" component={CreateTodoPage} />
+                <Route path="/edit/:id" component={EditTodoPage} />
                 <Route component={NotFoundPage} />
             </Switch>
             <FooterComponent />
