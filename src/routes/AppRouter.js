@@ -12,17 +12,17 @@ import NotFoundPage from '../pages/NotFound';
 
 
 const AppRouter = () => (
-    <div>
-        <HeaderComponent />
-        <BrowserRouter>
-                <Switch>
-                    <Route path="/" component={DashboardPage} exact={true} />
-                    <Route path="/create" component={CreateTodoPage} />
-                    <Route component={NotFoundPage} />
-                </Switch>
-        </BrowserRouter>
-        <FooterComponent />
-    </div>
+    <BrowserRouter>
+        <div>
+            <HeaderComponent />
+            <Switch>
+                <Route path="/" exact={true} component={DashboardPage} />
+                <Route path="/create" component={CreateTodoPage} />
+                <Route component={NotFoundPage} />
+            </Switch>
+            <FooterComponent />
+        </div>
+    </BrowserRouter>
 );
 
 export default AppRouter;
