@@ -1,7 +1,8 @@
 const filtersDefaultState = {
     text: '',
     startDate: undefined,
-    endDate: undefined
+    endDate: undefined,
+    sort: 'mostRecent'
 }
 
 const filtersReducer = ( state = filtersDefaultState, action ) => {
@@ -22,6 +23,18 @@ const filtersReducer = ( state = filtersDefaultState, action ) => {
             return {
                 ...state,
                 endDate: action.endDate
+            }
+
+        case 'SORT_BY_MOST_RECENT':
+            return {
+                ...state,
+                sort: 'mostRecent'
+            }
+        
+        case 'SORT_BY_OLDER':
+            return {
+                ...state,
+                sort: 'older'
             }
 
         default:

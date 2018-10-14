@@ -15,6 +15,11 @@ const TodoListFilters = (props) => {
                 value={props.filters.text} 
                 onChange={onChange}    
             />
+
+            <select>
+                <option>most recent</option>
+                <option>older first</option>
+            </select>
         </div>
     );
 };

@@ -7,7 +7,7 @@ import 'normalize-scss/sass/_normalize.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 import { createTodo } from './actions/todos';
-import { setTextFilter, setStartDateFilter, setEndDeateFilter } from './actions/filters';
+import { setTextFilter, setStartDateFilter, setEndDeateFilter, sortByMostRecent, sortByOlder } from './actions/filters';
 import getVisibleTodos from './selectors/todos';
 
 const store = configureStore();
@@ -33,6 +33,7 @@ store.dispatch(createTodo({
     note: 'Have a good night sleep',
     createdAt: 12
 }));
+store.dispatch(sortByMostRecent());
 
 
 
