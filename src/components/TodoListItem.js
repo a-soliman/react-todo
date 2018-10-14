@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { removeTodo } from '../actions/todos';
 
-const TodoListItem = ({ dispatch, id, title, note, createdAt }) => {
-    const onRemoveTodo = () => {
-        dispatch(removeTodo(id));
-    }
+
+const TodoListItem = ({ id, title, note, createdAt }) => {
+    
     return (
         <div>
             <Link to={`edit/${id}`}>
@@ -14,7 +12,6 @@ const TodoListItem = ({ dispatch, id, title, note, createdAt }) => {
             </Link>
             <p>{note}</p>
             <p>{createdAt}</p>
-            <button onClick={onRemoveTodo}>remove</button>
         </div>
     )
 }; 

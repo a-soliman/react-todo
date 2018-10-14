@@ -1,11 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TodoForm from '../components/TodoForm';
-import { editTodo } from '../actions/todos';
+import { editTodo, removeTodo } from '../actions/todos';
 
 const EditTodoPage = (props) => {
     const todo = props.todo;
-    console.log(todo);
+    
+    const onRemoveTodo = () => {
+        props.dispatch(removeTodo(todo.id));
+        props.history.push('/');
+    }
+
     return (
         <div>
             <TodoForm 
@@ -14,6 +19,8 @@ const EditTodoPage = (props) => {
                 props.dispatch(editTodo(todo.id, updates));
                 props.history.push('/');
             }}/>
+
+            <button onClick={onRemoveTodo}>remove</button>
         </div>
     );
 }
