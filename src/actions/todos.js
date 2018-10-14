@@ -5,8 +5,7 @@ export const createTodo =
     (
         {
             title = '', 
-            note = '', 
-            createdAt = 0
+            note = ''
         } = {}
     ) => ({
         type: 'CREATE_TODO',
@@ -14,7 +13,7 @@ export const createTodo =
             id: uuid(),
             title,
             note,
-            createdAt
+            createdAt: moment().valueOf()
         }
     }
 );
