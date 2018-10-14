@@ -2,8 +2,8 @@ import React from 'react';
 
 export default class TodoForm extends React.Component {
     state = {
-        title: '',
-        note: '',
+        title: this.props.todo ? this.props.todo.title : '',
+        note: this.props.todo ? this.props.todo.note : '',
         error: ''
     };
 
@@ -56,7 +56,7 @@ export default class TodoForm extends React.Component {
                     <div className="form-group">
                         <textarea 
                             className="form-control" 
-                            value={this.state.notet} 
+                            value={this.state.note} 
                             onChange={this.onNoteChange}
                             placeholder="note">
                         </textarea>
