@@ -1,9 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import TodoForm from '../components/TodoForm';
+import { createTodo } from '../actions/todos';
 
-const CreateTodoPage = () => (
+const CreateTodoPage = (props) => (
     <div>
-    CreateTodoPage
+        CreateTodoPage
+        <TodoForm  onSubmit={(todo) => {
+            props.dispatch((createTodo(todo)));
+            props.history.push('/');
+        }}/>
     </div>
 );
-
-export default CreateTodoPage;
+ 
+export default connect()(CreateTodoPage);
