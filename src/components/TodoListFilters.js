@@ -4,7 +4,8 @@ import {setTextFilter} from '../actions/filters';
 
 const TodoListFilters = (props) => {
     const onChange = (e) => {
-        props.dispatch(setTextFilter(e.target.value.trim()));
+        const filterText = e.target.value.trim().toLowerCase();
+        props.dispatch(setTextFilter(filterText));
     }
     return (
         <div>

@@ -19,18 +19,18 @@ store.subscribe(() => {
 });
 
 store.dispatch(createTodo({
-    title: 'test todo',
-    note: 'This is a test todo',
+    title: 'Pay the Rent',
+    note: 'Pay the rent on the 5th of the month',
     createdAt: 10
 }));
 store.dispatch(createTodo({
-    title: 'test todo',
-    note: 'This is a test todo',
+    title: 'Get the Groceries',
+    note: 'Get the groceries by tonight',
     createdAt: 8
 }));
 store.dispatch(createTodo({
-    title: 'test todo',
-    note: 'This is a test todo',
+    title: 'Sleep tight',
+    note: 'Have a good night sleep',
     createdAt: 12
 }));
 
