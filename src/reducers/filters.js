@@ -1,7 +1,9 @@
+import moment from 'moment';
+
 const filtersDefaultState = {
     text: '',
-    startDate: undefined,
-    endDate: undefined,
+    startDate: moment().startOf('month'),
+    endDate: moment().endOf('month'),
     sort: 'mostRecent'
 }
 

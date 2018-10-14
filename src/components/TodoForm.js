@@ -1,11 +1,16 @@
 import React from 'react';
 
 export default class TodoForm extends React.Component {
-    state = {
-        title: this.props.todo ? this.props.todo.title : '',
-        note: this.props.todo ? this.props.todo.note : '',
-        error: ''
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            title: this.props.todo ? this.props.todo.title : '',
+            note: this.props.todo ? this.props.todo.note : '',
+            error: ''
+        };
+    }
+    
 
     onTitleChange = (e) => {
         const title  = e.target.value;
@@ -14,7 +19,7 @@ export default class TodoForm extends React.Component {
     };
 
     onNoteChange = (e) => {
-        const note = e.target.value.trim();
+        const note = e.target.value;
         this.setState(() => ({ note }));
     }
 
