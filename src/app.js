@@ -33,7 +33,7 @@ store.dispatch(createTodo({
     note: 'Have a good night sleep',
     createdAt: 12
 }));
-store.dispatch(sortByMostRecent());
+
 
 
 
