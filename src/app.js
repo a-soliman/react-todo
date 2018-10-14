@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import AppRouter from './routes/AppRouter'
 import configureStore from './store/configureStore';
 import 'normalize-scss/sass/_normalize.scss';
@@ -35,7 +36,13 @@ store.dispatch(createTodo({
 
 
 
+const jsx = (
+    <Provider store={store}>
+        <AppRouter />
+    </Provider>
+    
+);
 
 
 const appContainer = document.querySelector('#app');
-ReactDOM.render(<AppRouter />, appContainer);
+ReactDOM.render(jsx, appContainer);
