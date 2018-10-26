@@ -9,5 +9,15 @@ describe('Filters Actions Generators', () => {
             text
         });
     });
+
+    test('Should set startDate filter', () => {
+        const startDate = '111';
+        const action = setStartDateFilter(startDate);
+        expect(action).toEqual({
+            type: 'SET_START_DATE',
+            startDate
+        });
+    });
+
     
 });
