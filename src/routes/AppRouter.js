@@ -4,12 +4,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 /* COMPONENTS */
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
-
-/* PAGES */
-import DashboardPage from '../pages/Dashboard';
-import CreateTodoPage from '../pages/CreateTodo';
-import EditTodoPage from '../pages/EditTodo';
-import NotFoundPage from '../pages/NotFound';
+import DashboardPage from '../components/Dashboard';
+import CreateTodoPage from '../components/CreateTodo';
+import EditTodoPage from '../components/EditTodo';
+import NotFoundPage from '../components/NotFound';
 
 
 const AppRouter = () => (

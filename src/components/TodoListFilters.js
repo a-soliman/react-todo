@@ -12,16 +12,16 @@ class TodoListFilters extends React.Component {
 
     onTextFilterChange = (e) => {
         const filterText = e.target.value.trim().toLowerCase();
-        props.dispatch(setTextFilter(filterText));
+        this.props.dispatch(setTextFilter(filterText));
     };
 
     onSortFilterChange = (e) => {
         const sortBy = e.target.value;
         if ( sortBy === 'mostRecent') {
-            props.dispatch(sortByMostRecent());
+            this.props.dispatch(sortByMostRecent());
         }
         else {
-            props.dispatch(sortByOlder());
+            this.props.dispatch(sortByOlder());
         }
         
     };
