@@ -35,5 +35,17 @@ describe('FiltersReducer', () => {
         });
     });
 
+    test('Should sort by older', () => {
+        const sort = 'older';
+        const action = {
+            type: 'SORT_BY_OLDER'
+        };
+        const result = filtersReducer(state, action);
+        expect(result).toEqual({
+            ...state,
+            sort
+        });
+    });
+
     
 });
