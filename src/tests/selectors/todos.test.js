@@ -25,5 +25,16 @@ describe('GetVisibleTodos Selector', () => {
         expect(result).toEqual([ todos[2], todos[1], todos[0] ]);
     });
 
+    test('Should filter by startDate', () => {
+        const filters = {
+            text: '',
+            startDate: moment(0).add(3, 'days') ,
+            endDate: undefined,
+            sort: 'mostRecent'
+        };
+        const result = getVisibleTodos(todos, filters);
+        expect(result).toEqual([ todos[2], todos[1] ]);
+    });
+
     
 });
