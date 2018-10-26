@@ -14,5 +14,16 @@ describe('GetVisibleTodos Selector', () => {
         expect(result).toEqual([ todos[0] ]);
     });
 
+    test('Should clear text filter if no parmas passed', () => {
+        const filters = {
+            text: '',
+            startDate: undefined,
+            endDate: undefined,
+            sort: 'mostRecent'
+        };
+        const result = getVisibleTodos(todos, filters);
+        expect(result).toEqual([ todos[2], todos[1], todos[0] ]);
+    });
+
     
 });
