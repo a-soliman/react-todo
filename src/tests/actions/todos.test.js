@@ -14,6 +14,14 @@ describe('Todos Actions Generators', () => {
         expect(action.todo.id).toBeDefined();
     });
 
+    test('Should create todo with the default values if no params', () => {
+        const action = createTodo();
+        expect(action.type).toBe('CREATE_TODO');
+        expect(action.todo.title).toBe('');
+        expect(action.todo.note).toBe('');
+        expect(action.todo.id).toBeDefined();
+    });
+
     test('Should remove todo', () => {
         const id = 'abc123';
         const action = removeTodo(id);
