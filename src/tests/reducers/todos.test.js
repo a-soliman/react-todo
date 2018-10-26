@@ -34,5 +34,24 @@ describe('TodosReducer', () => {
         expect(result).toHaveLength(2);
     });
 
-    
+    test('Should editTodo', () => {
+        const updates = {
+            title: 'updated title',
+            note: 'updated note',
+        };
+        const action = {
+            type: 'EDIT_TODO',
+            id: '1',
+            updates
+        };
+        const result = todosReducer(todos, action);
+        expect(result).toEqual([
+            {
+            ...todos[0],
+            ...updates
+            },
+            todos[1],
+            todos[2]
+        ]);
+    });
 });
