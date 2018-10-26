@@ -65,5 +65,18 @@ describe('FiltersReducer', () => {
         });
     });
 
+    test('Should set startDate filter', () => {
+        const startDate = moment(0);
+        const action = {
+            type: 'SET_START_DATE',
+            startDate
+        };
+        const result = filtersReducer(state, action);
+        expect(result).toEqual({
+            ...state,
+            startDate
+        });
+    });
+
     
 });
