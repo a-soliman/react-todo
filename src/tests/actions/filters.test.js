@@ -28,5 +28,12 @@ describe('Filters Actions Generators', () => {
         });
     });
 
+    test('Should sort by most_recent', () => {
+        const action = sortByMostRecent();
+        expect(action).toEqual({
+            type: 'SORT_BY_MOST_RECENT'
+        });
+    });
+
     
 });
