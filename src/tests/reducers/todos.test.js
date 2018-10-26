@@ -25,5 +25,14 @@ describe('TodosReducer', () => {
         expect(result).toEqual([ ...todos, action.todo ]);
     });
 
+    test('Should removeTodo', () => {
+        const action = {
+            type: 'REMOVE_TODO',
+            id: '3'
+        };
+        const result = todosReducer(todos, action);
+        expect(result).toHaveLength(2);
+    });
+
     
 });
