@@ -19,5 +19,14 @@ describe('Filters Actions Generators', () => {
         });
     });
 
+    test('Should set endDate filter', () => {
+        const endDate = '555';
+        const action = setEndDeateFilter(endDate);
+        expect(action).toEqual({
+            type: 'SET_END_DATE',
+            endDate
+        });
+    });
+
     
 });
