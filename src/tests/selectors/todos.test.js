@@ -58,5 +58,14 @@ describe('GetVisibleTodos Selector', () => {
         expect(result).toEqual([ todos[2], todos[1], todos[0] ]);
     });
 
-    
+    test('Should sort by older', () => {
+        const filters = {
+            text: '',
+            startDate: undefined,
+            endDate: undefined,
+            sort: 'older'
+        };
+        const result = getVisibleTodos(todos, filters);
+        expect(result).toEqual([ todos[0], todos[1], todos[2] ]);
+    });
 });
