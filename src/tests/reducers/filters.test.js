@@ -22,5 +22,18 @@ describe('FiltersReducer', () => {
         });
     });
 
+    test('Should set text filter', () => {
+        const text = 'test';
+        const action = {
+            type: 'SET_TEXT_FILTER',
+            text
+        };
+        const result = filtersReducer(state, action);
+        expect(result).toEqual({
+            ...state,
+            text
+        });
+    });
+
     
 });
