@@ -1,6 +1,5 @@
 import moment from 'moment';
 import filtersReducer from '../../reducers/filters';
-import { stat } from 'fs';
 
 describe('FiltersReducer', () => {
     const state = {
