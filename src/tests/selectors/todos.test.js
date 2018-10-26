@@ -1,5 +1,5 @@
 import getVisibleTodos from '../../selectors/todos';
-import todo, { todos } from '../fixtures/todos';
+import { todos } from '../fixtures/todos';
 import moment from 'moment';
 
 describe('GetVisibleTodos Selector', () => {
