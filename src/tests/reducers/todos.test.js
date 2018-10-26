@@ -11,5 +11,19 @@ describe('TodosReducer', () => {
         expect(state).toEqual([]);
     });
 
+    test('Should createTodo', () => {
+        const action = {
+            type: 'CREATE_TODO',
+            todo: {
+                title: 'test todo',
+                note: 'test note',
+                id: '101',
+                createdAt: moment(0).add(100, 'days').valueOf()
+            }
+        };
+        const result = todosReducer(todos, action);
+        expect(result).toEqual([ ...todos, action.todo ]);
+    });
+
     
 });
