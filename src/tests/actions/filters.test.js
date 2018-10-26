@@ -35,5 +35,10 @@ describe('Filters Actions Generators', () => {
         });
     });
 
-    
+    test('Should sort by older', () => {
+        const action = sortByOlder();
+        expect(action).toEqual({
+            type: 'SORT_BY_OLDER'
+        });
+    });
 });
