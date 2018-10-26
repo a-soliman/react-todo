@@ -78,5 +78,16 @@ describe('FiltersReducer', () => {
         });
     });
 
-    
+    test('Should set endDate filter', () => {
+        const endDate = moment(0).add(4, 'days');
+        const action = {
+            type: 'SET_END_DATE',
+            endDate
+        };
+        const result = filtersReducer(state, action);
+        expect(result).toEqual({
+            ...state,
+            endDate
+        });
+    });
 });
