@@ -47,5 +47,23 @@ describe('FiltersReducer', () => {
         });
     });
 
+    test('Should sort by mostRecent', () => {
+        const state = {
+            text: '',
+            startDate: moment().startOf('month'),
+            endDate: moment().endOf('month'),
+            sort: 'older'
+        };
+        const sort = 'mostRecent';
+        const action = {
+            type: 'SORT_BY_MOST_RECENT'
+        };
+        const result = filtersReducer(state, action);
+        expect(result).toEqual({
+            ...state,
+            sort
+        });
+    });
+
     
 });
