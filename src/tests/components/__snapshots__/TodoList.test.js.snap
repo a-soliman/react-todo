@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoListComponent Should render TodoListCompoent correctly 1`] = `
+<div>
+  <Connect(TodoListItem)
+    createdAt={"1970-01-01T00:00:00.000Z"}
+    id="1"
+    key="1"
+    note="todo one note"
+    title="todo one"
+  />
+  <Connect(TodoListItem)
+    createdAt={"1970-01-04T00:00:00.000Z"}
+    id="2"
+    key="2"
+    note="todo two note"
+    title="todo two"
+  />
+  <Connect(TodoListItem)
+    createdAt={"1970-01-06T00:00:00.000Z"}
+    id="3"
+    key="3"
+    note="todo three note"
+    title="todo three"
+  />
+</div>
+`;
+
+exports[`TodoListComponent Should render todosList with empty message 1`] = `
+<div>
+  <p>
+    No Todos..
+  </p>
+</div>
+`;
