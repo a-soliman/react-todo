@@ -7,7 +7,7 @@
     "serve": "live-server public/",
     "build": "webpack --watch",
     "dev-server": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest --config=jest.config.json"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "css-loader": "^0.28.4",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-to-json": "^3.3.4",
     "jest": "^20.0.4",
     "live-server": "^1.2.0",
     "moment": "^2.22.2",
