@@ -37,5 +37,17 @@ describe('TodoListFiltersComponent', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('Should handle text change', () => {
+        const text = 'test';
+        const e = {
+            target: {
+                value: text
+            }
+        };
+        wrapper.find('input').at(0).simulate('change', e);
+        expect(setTextFilter).toHaveBeenLastCalledWith(text);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     
 });
