@@ -3,30 +3,39 @@ import { connect } from 'react-redux';
 import TodoForm from './TodoForm';
 import { editTodo, removeTodo } from '../actions/todos';
 
-const EditTodoPage = (props) => {
-    const todo = props.todo;
+export class EditTodoPage extends React.Component {
+
+    onRemoveTodo = () => {
+        this.props.removeTodo(this.props.todo.id);
+        this.props.history.push('/');
+    };
+
+    onSubmit = (updates) => {
+        this.props.editTodo(this.props.todo.id, updates);
+        this.props.history.push('/');
+    };
+
+    render() {
+        return (
+            <div>
+                <TodoForm 
+                    todo={this.props.todo} 
+                    onSubmit={this.onSubmit}
+                />
     
-    const onRemoveTodo = () => {
-        props.dispatch(removeTodo(todo.id));
-        props.history.push('/');
+                <button onClick={this.onRemoveTodo}>remove</button>
+            </div>
+        );
     }
-
-    return (
-        <div>
-            <TodoForm 
-                todo={todo} 
-                onSubmit={(updates) => {
-                props.dispatch(editTodo(todo.id, updates));
-                props.history.push('/');
-            }}/>
-
-            <button onClick={onRemoveTodo}>remove</button>
-        </div>
-    );
 }
 
 const mapStateToProps = (state, props) => ({
     todo: state.todos.find(todo => todo.id == props.match.params.id)
 });
 
-export default connect(mapStateToProps)(EditTodoPage);
+const mapDispatchToProps = (dispatch) => ({
+    editTodo: (id, updates) => dispatch(editTodo(id, updates)),
+    removeTodo: (id) => dispatch(removeTodo(id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditTodoPage);
