@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import AppRouter from './routes/AppRouter'
 import configureStore from './store/configureStore';
 import 'normalize-scss/sass/_normalize.scss';
+import 'react-dates/lib/css/_datepicker.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 import { createTodo } from './actions/todos';
