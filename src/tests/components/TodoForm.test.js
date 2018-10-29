@@ -26,5 +26,19 @@ describe('TodoForm Component', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('Should setState onTitleChange', () => {
+        const title = 'Test Title';
+        const e = {
+            target: {
+                value: title
+            }
+        };
+        const wrapper = shallow(<TodoForm />);
+        wrapper.find('input').at(0).simulate('change', e);
+        expect(wrapper.state('title')).toBe(title);
+        expect(wrapper.state('error').length).toBe(0);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     
 });
