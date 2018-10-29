@@ -1,0 +1,228 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoForm Component Should render TodoForm correctly 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        autoFocus={true}
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Title"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <textarea
+        className="form-control"
+        onChange={[Function]}
+        placeholder="note"
+        value=""
+      />
+    </div>
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`TodoForm Component Should render TodoForm with todo-data 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        autoFocus={true}
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Title"
+        type="text"
+        value="todo two"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <textarea
+        className="form-control"
+        onChange={[Function]}
+        placeholder="note"
+        value="todo two note"
+      />
+    </div>
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`TodoForm Component Should render error for invalid form submission 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        autoFocus={true}
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Title"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <textarea
+        className="form-control"
+        onChange={[Function]}
+        placeholder="note"
+        value=""
+      />
+    </div>
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`TodoForm Component Should render error for invalid form submission 2`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        autoFocus={true}
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Title"
+        type="text"
+        value=""
+      />
+      <div
+        className="alert alert-danger"
+      >
+        Please provide a title for the Todo.
+      </div>
+    </div>
+    <div
+      className="form-group"
+    >
+      <textarea
+        className="form-control"
+        onChange={[Function]}
+        placeholder="note"
+        value=""
+      />
+    </div>
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`TodoForm Component Should setState onNoteChange 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        autoFocus={true}
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Title"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <textarea
+        className="form-control"
+        onChange={[Function]}
+        placeholder="note"
+        value="Test note"
+      />
+    </div>
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`TodoForm Component Should setState onTitleChange 1`] = `
+<div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        autoFocus={true}
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Title"
+        type="text"
+        value="Test Title"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <textarea
+        className="form-control"
+        onChange={[Function]}
+        placeholder="note"
+        value=""
+      />
+    </div>
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
