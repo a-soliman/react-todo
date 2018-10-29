@@ -30,5 +30,12 @@ describe('TodoListFiltersComponent', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('Should render TodoListFiltersComponent with alt-filters correctly', () => {
+        wrapper.setProps({
+            filters: altFilters
+        });
+        expect(wrapper).toMatchSnapshot();
+    });
+
     
 });
