@@ -12,5 +12,4 @@ describe('TodoListComponent', () => {
         const wrapper = shallow(<TodosList todos={[]} />);
         expect(wrapper).toMatchSnapshot();
     });
-
 });
