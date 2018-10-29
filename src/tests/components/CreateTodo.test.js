@@ -17,5 +17,5 @@ describe('CreateTodo Component', () => {
         wrapper.find('TodoForm').prop('onSubmit')(todo);
         expect(createTodoSpy).toHaveBeenLastCalledWith(todo);
         expect(history.push).toHaveBeenLastCalledWith('/');
-    })
+    });
 })
