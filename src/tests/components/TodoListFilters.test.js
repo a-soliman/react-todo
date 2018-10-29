@@ -72,5 +72,14 @@ describe('TodoListFiltersComponent', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('Should handle date changes', () => {
+        const startDate = moment(0);
+        const endDate = moment(0).add(5, 'days');
+        wrapper.find('DateRangePicker').prop('onDatesChange')({startDate, endDate});
+        expect(setStartDateFilter).toHaveBeenLastCalledWith(startDate);
+        expect(setEndDeateFilter).toHaveBeenLastCalledWith(endDate);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     
 });
