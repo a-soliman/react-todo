@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 
-const TodoListItem = ({ id, title, note, createdAt }) => {
+export const TodoListItem = ({ id, title, note, createdAt }) => {
     
     return (
         <div>
