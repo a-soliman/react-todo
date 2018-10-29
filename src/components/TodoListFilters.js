@@ -3,34 +3,34 @@ import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
 import {setTextFilter, setStartDateFilter, setEndDeateFilter, sortByMostRecent, sortByOlder} from '../actions/filters';
 
-class TodoListFilters extends React.Component {
+export class TodoListFilters extends React.Component {
 
     state = {
-        calendarFocus: null
+        calenderFocused: null
     }
 
     onTextFilterChange = (e) => {
         const filterText = e.target.value.trim().toLowerCase();
-        this.props.dispatch(setTextFilter(filterText));
+        this.props.setTextFilter(filterText);
     };
 
     onSortFilterChange = (e) => {
         const sortBy = e.target.value;
         if ( sortBy === 'mostRecent') {
-            this.props.dispatch(sortByMostRecent());
+            this.props.sortByMostRecent();
         }
         else {
-            this.props.dispatch(sortByOlder());
+            this.props.sortByOlder();
         }
         
     };
 
     onDatesChange = ({ startDate, endDate }) => {
-        this.props.dispatch(setStartDateFilter(startDate));
-        this.props.dispatch(setEndDeateFilter(endDate));
+        this.props.setStartDateFilter(startDate);
+        this.props.setEndDeateFilter(endDate);
     }
 
-    onFocusChange = (calendarFocus => this.setState({ calendarFocus }))
+    onFocusChange = (calenderFocused => this.setState({ calenderFocused }))
 
     render() {
         return (
@@ -53,7 +53,7 @@ class TodoListFilters extends React.Component {
                     startDate={this.props.filters.startDate}
                     endDate={this.props.filters.endDate}
                     onDatesChange={this.onDatesChange}
-                    focusedInput={this.state.calendarFocus}
+                    focusedInput={this.state.calenderFocused}
                     onFocusChange={this.onFocusChange}
                     numberOfMonths={1}
                     showClearDates={true}
@@ -68,4 +68,13 @@ class TodoListFilters extends React.Component {
 const mapStateToProps = (state) => (
     { filters: state.filters }
 );
-export default connect(mapStateToProps)(TodoListFilters);
+
+const mapDispatchToProps = (dispatch) => ({
+    setTextFilter: (text) => dispatch(setTextFilter(text)),
+    sortByMostRecent: () => dispatch(sortByMostRecent()),
+    sortByOlder: () => dispatch(sortByOlder()),
+    setStartDateFilter: (startDate) => dispatch(setStartDateFilter(startDate)),
+    setEndDeateFilter: (endDate) => dispatch(setEndDeateFilter(endDate))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoListFilters);
