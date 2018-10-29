@@ -15,5 +15,16 @@ describe('TodoForm Component', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('Should render error for invalid form submission', () => {
+        const e = {
+            preventDefault: () => {}
+        };
+        const wrapper = shallow(<TodoForm />);
+        expect(wrapper).toMatchSnapshot();
+        wrapper.find('form').simulate('submit', e);
+        expect(wrapper.state('error').length).toBeGreaterThan(0);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     
 });
