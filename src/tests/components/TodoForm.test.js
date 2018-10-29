@@ -40,5 +40,19 @@ describe('TodoForm Component', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('Should setState onNoteChange', () => {
+        const note = 'Test note';
+        const e = {
+            target: {
+                value: note
+            }
+        };
+        const wrapper = shallow(<TodoForm />);
+        wrapper.find('textarea').simulate('change', e);
+        expect(wrapper.state('note')).toBe(note);
+        expect(wrapper.state('error').length).toBe(0);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     
 });
