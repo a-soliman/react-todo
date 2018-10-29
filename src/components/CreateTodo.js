@@ -3,14 +3,24 @@ import { connect } from 'react-redux';
 import TodoForm from './TodoForm';
 import { createTodo } from '../actions/todos';
 
-const CreateTodoPage = (props) => (
-    <div>
-        CreateTodoPage
-        <TodoForm  onSubmit={(todo) => {
-            props.dispatch((createTodo(todo)));
-            props.history.push('/');
-        }}/>
-    </div>
-);
- 
-export default connect()(CreateTodoPage);
+export class CreateTodoPage extends React.Component {
+    onSubmit = (todo) => {
+        this.props.onSubmit(todo);
+        this.props.history.push('/');
+    };
+    
+    render() {
+        return (
+            <div>
+                CreateTodoPage
+                <TodoForm  onSubmit={this.onSubmit}/>
+            </div>
+        );
+    }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+        onSubmit: (todo) => dispatch(createTodo(todo))
+});
+
+export default connect(undefined, mapDispatchToProps)(CreateTodoPage);
