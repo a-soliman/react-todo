@@ -81,5 +81,9 @@ describe('TodoListFiltersComponent', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    
+    test('Should handle date focus changes', () => {
+        const calenderFocused = 'endDate';
+        wrapper.find('DateRangePicker').prop('onFocusChange')(calenderFocused);
+        expect(wrapper.state('calenderFocused')).toBe(calenderFocused);
+    });
 });
