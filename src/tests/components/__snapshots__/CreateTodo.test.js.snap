@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateTodo Component Should Render CreateTodo Component correctly 1`] = `
+<div>
+  CreateTodoPage
+  <TodoForm
+    onSubmit={[Function]}
+  />
+</div>
+`;
