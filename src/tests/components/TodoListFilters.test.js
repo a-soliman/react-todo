@@ -60,5 +60,17 @@ describe('TodoListFiltersComponent', () => {
         expect(sortByOlder).toHaveBeenCalled();
     });
 
+    test('Should sortBy mostRecent', () => {
+        const sortBy = 'mostRecent';
+        const e = {
+            target: {
+                value: sortBy
+            }
+        };
+        wrapper.find('select').simulate('change', e);
+        expect(sortByMostRecent).toHaveBeenCalled();
+        expect(wrapper).toMatchSnapshot();
+    });
+
     
 });
