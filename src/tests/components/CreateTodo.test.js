@@ -11,11 +11,11 @@ describe('CreateTodo Component', () => {
 
     test('Should submit with valid form', () => {
         const todo = todos[1];
-        const onSubmitSpy = jest.fn();
+        const createTodoSpy = jest.fn();
         const history = { push: jest.fn() };
-        const wrapper = shallow(<CreateTodoPage onSubmit={onSubmitSpy} todo={todo} history={history}/>);
+        const wrapper = shallow(<CreateTodoPage createTodo={createTodoSpy} todo={todo} history={history}/>);
         wrapper.find('TodoForm').prop('onSubmit')(todo);
-        expect(onSubmitSpy).toHaveBeenLastCalledWith(todo);
+        expect(createTodoSpy).toHaveBeenLastCalledWith(todo);
         expect(history.push).toHaveBeenLastCalledWith('/');
     })
 })

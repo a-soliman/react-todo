@@ -5,10 +5,10 @@ import { createTodo } from '../actions/todos';
 
 export class CreateTodoPage extends React.Component {
     onSubmit = (todo) => {
-        this.props.onSubmit(todo);
+        this.props.createTodo(todo);
         this.props.history.push('/');
     };
-    
+
     render() {
         return (
             <div>
@@ -20,7 +20,7 @@ export class CreateTodoPage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-        onSubmit: (todo) => dispatch(createTodo(todo))
+        createTodo: (todo) => dispatch(createTodo(todo))
 });
 
 export default connect(undefined, mapDispatchToProps)(CreateTodoPage);
