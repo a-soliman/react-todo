@@ -49,5 +49,16 @@ describe('TodoListFiltersComponent', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('Should sortBy older', () => {
+        const sortBy = 'older';
+        const e = {
+            target: {
+                value: sortBy
+            }
+        };
+        wrapper.find('select').simulate('change', e);
+        expect(sortByOlder).toHaveBeenCalled();
+    });
+
     
 });
