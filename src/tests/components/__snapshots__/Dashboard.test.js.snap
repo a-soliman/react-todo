@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard Component Should render Dashboard component correctly 1`] = `
+<div>
+  Todo Dashboard.
+  <Connect(TodoListFilters) />
+  <Connect(TodosList) />
+</div>
+`;
