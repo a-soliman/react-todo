@@ -54,5 +54,16 @@ describe('TodoForm Component', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    
+    test('Should call onSubmit prop for valid form submission', () => {
+        const onSubmitSpy = jest.fn();
+        const todo = todos[0];
+        const { title, note } = todo;
+        const e = {
+            preventDefault: () => {}
+        };
+        const wrapper = shallow(<TodoForm todo={todo} onSubmit={onSubmitSpy} />);
+        wrapper.find('form').simulate('submit', e);
+        expect(wrapper.state('error').length).toBe(0);
+        expect(onSubmitSpy).toHaveBeenLastCalledWith({ title, note });
+    });
 });
